@@ -8,7 +8,7 @@ int main(int argc, char* argv[]){
     }
     std::vector<std::vector<int>> reports;
     std::cout << "Reading reports from file: " << argv[1] << std::endl;
-    Day1::loadReports(argv[1], reports);
+    Day2::loadReports(argv[1], reports);
     for(int i = 0; i < reports.size(); i++){
         printf("Report %d: ", i);
         for(int j = 0; j < reports[i].size(); j++){
@@ -19,7 +19,7 @@ int main(int argc, char* argv[]){
     std::cout << "Checking reports" << std::endl;
     int safeReports = 0;
     for(int i = 0; i < reports.size(); i++){
-        if(Day1::checkSafety(reports[i])){
+        if(Day2::checkSafety(reports[i])){
             safeReports++;
         }
     }

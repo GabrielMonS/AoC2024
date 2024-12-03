@@ -3,7 +3,7 @@
 #include <algorithm>
 #include <cstring>
 
-namespace Day1{
+namespace Day2{
     void loadReports(const char* fileName, std::vector<std::vector<int>> &list){
         FILE* file = fopen(fileName, "r");
         if(file == NULL){
