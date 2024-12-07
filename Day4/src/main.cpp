@@ -12,6 +12,8 @@ int main(int argc, char* argv[]){
     std::cout << "Last element: " << xmasarray[xmasarray.size()-1][xmasarray[0].size()-1] << std::endl;
     int count = Day4::countXMASinArray(xmasarray);
     printf("XMAS Count: %d\n", count);
+    int count2 = Day4::countCrossedMASinArray(xmasarray);
+    printf("Crossed MAS Count: %d\n", count2);
     printf("Press any key to close the program\n");
     getchar();
     return 0;

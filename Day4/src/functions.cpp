@@ -164,4 +164,28 @@ namespace Day4{
         }
         return count;
     }
+
+    int countCrossedMASinArray(std::vector<std::vector<char>> xmasarray){
+        int count = 0;
+        std::cout << "Checking array for CrossedMAS" << std::endl;
+        for(int i = 0; i < xmasarray.size(); i++){
+            for(int j = 0; j < xmasarray[i].size(); j++){
+                if(xmasarray[i][j] == 'A'){
+                    //Check if the corners are M and S
+                    if(i-1 >= 0 && j-1 >= 0 && i+1 < xmasarray.size() && j+1 < xmasarray[i].size()){
+                        char corner1 = xmasarray[i-1][j-1];
+                        char corner2 = xmasarray[i-1][j+1];
+                        char corner3 = xmasarray[i+1][j-1];
+                        char corner4 = xmasarray[i+1][j+1];
+                        if((corner1 == 'M' && corner4 == 'S') || (corner1 == 'S' && corner4 == 'M')){
+                            if((corner2 == 'M' && corner3 == 'S') || (corner2 == 'S' && corner3 == 'M')){
+                                count++;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        return count;
+    }
 }
